@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSailing - Purjehdus- ja veneilykoulutus</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <div class="logo">JSailing</div>
+            <ul class="nav-links">
+                <li><a href="#etusivu">Etusivu</a></li>
+                <li><a href="#kurssit">Kurssit</a></li>
+                <li><a href="#tietoa">Tietoa</a></li>
+                <li><a href="#yhteystiedot">Ota yhteyttä!</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Purjehdus- ja veneilykoulutusta</h1>
+            <p>Suomessa ja Välimerellä. Purjehduskurssit, navigointi ja charter.</p>
+            <a href="#kurssit" class="btn">Tutustu kursseihin</a>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <section id="palvelut" class="grid">
+            <div class="card">
+                <img src="img/navigointi.png" alt="Navigointikurssit">
+                <h3>Navigointikurssit</h3>
+                <p>Opi meriteiden säännöt ja karttatyöskentely.</p>
+            </div>
+            <div class="card">
+                <img src="img/charter.png" alt="Charter">
+                <h3>Charter</h3>
+                <p>Elämykselliset purjehdukset ja vuokrauspalvelut.</p>
+            </div>
+            <div class="card">
+                <img src="img/kurssit.png" alt="Purjehduskurssit">
+                <h3>Purjehduskurssit</h3>
+                <p>Alkeista rannikkopäälliköksi asti.</p>
+            </div>
+        </section>
+
+        <section id="kurssit">
+            <h2>Suosituimmat kurssit</h2>
+            <div class="course-list">
+                <div class="course-item">
+                    <h4>Johdatus purjehdukseen (4h)</h4>
+                    <p>Tarkoitettu tutustumistilaisuudeksi, jossa perehdytään perusteisiin.</p>
+                </div>
+                <div class="course-item">
+                    <h4>Purjehtijakurssi</h4>
+                    <p>Alkeisopetusta, kesto minimissään 32 tuntia.</p>
+                </div>
+                <div class="course-item">
+                    <h4>Saaristopäällikkökurssi</h4>
+                    <p>Vahvista taitojasi ja opi toimimaan kipparina suotuisissa oloissa.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="yhteystiedot">
+            <h2>Ota yhteyttä</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <p><strong>Jarmo Aaltonen</strong></p>
+                    <p>Kontiontie 55, 11120 Riihimäki</p>
+                    <p>Puh: +358 44 380 8569</p>
+                    <p>Email: jacke.seilaa@gmail.com</p>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Nimesi" required>
+                    <input type="email" placeholder="Sähköpostisi" required>
+                    <select>
+                        <option>Navi-kurssi</option>
+                        <option>Purjehduskurssi</option>
+                        <option>Muu yhteydenotto</option>
+                    </select>
+                    <textarea placeholder="Viestisi"></textarea>
+                    <button type="submit" class="btn">Lähetä</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 JSailing / JAaltonen.fi</p>
+    </footer>
+
+</body>
+</html>
