@@ -55,21 +55,48 @@ nav {
     font-weight: 500;
 }
 
-/* Hero-osio */
+/* =========================================
+   Hero-osio Parallax-efektillä
+   ========================================= */
 #hero {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('img/hero-bg.jpg') no-repeat center center/cover;
-    height: 60vh;
+    /* 1. Perusasetukset */
+    height: 70vh; /* Nostetaan hieman korkeutta, efekti näkyy paremmin */
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    position: relative;
+    overflow: hidden; /* Varmistaa, ettei kuva vuoda yli */
+
+    /* 2. Taustakuvan asetukset */
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('img/hero-bg.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    /* 3. PARALLAX-YDIN: Tämä lukitsee kuvan paikalleen */
+    background-attachment: fixed;
+}
+
+.hero-content {
+    z-index: 10; /* Varmistetaan, että teksti on kuvan päällä */
+    padding: 0 20px;
 }
 
 .hero-content h1 {
-    font-size: 3rem;
+    font-size: 3.5rem; /* Hieman isompi fontti */
     margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Parempi luettavuus */
 }
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+
 
 /* Kortit ja Grid */
 .grid {
@@ -88,8 +115,8 @@ nav {
 }
 
 .card img {
-    width: 100%;
-    /* height: 200px; */
+    /* width: 100%; */
+    max-height: 200px;
     object-fit: cover;
     border-radius: 5px;
     margin-bottom: 15px;
@@ -147,9 +174,130 @@ footer {
     margin-top: 40px;
 }
 
-/* Mobiiliasettelu */
+
+/* --- Hampurilaisvalikon tyylit --- */
+
+.menu-toggle {
+    display: none; /* Piilossa tietokoneella */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 3px 0;
+    transition: 0.4s;
+    border-radius: 3px;
+}
+
+/* --- Mobiiliasettelu (alle 768px) --- */
+@media (max-width: 768px) {
+    
+    /* Varmistetaan että työpöytäversio piilotetaan ja muutetaan pystysuuntaiseksi */
+    .nav-links {
+        display: none; /* Oletuksena piilossa mobiilissa */
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        width: 70%;
+        background-color: #003366;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 999; /* Erittäin korkea, jotta pysyy Heron päällä */
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(100%); /* Siirretään kokonaan oikealle piiloon */
+    }
+
+    /* TÄMÄ LUOKKA AKTIVOITUU JAVASCRIPTILLÄ */
+    .nav-links.active {
+        display: flex; /* Muutetaan näkyväksi */
+        transform: translateX(0); /* Tuodaan ruudulle */
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .nav-links a {
+        font-size: 1.5rem;
+        display: block;
+        width: 100%;
+    }
+
+    /* Hampurilaispainike */
+    .menu-toggle {
+        display: flex;
+        z-index: 2001; /* Vielä korkeampi kuin valikko */
+        position: relative;
+    }
+}
+
+/* Mobiiliasettelu (alle 768px) */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+        z-index: 1001;
+    }
+
+    .nav-links {
+        position: fixed;
+        right: -100%; /* Piilotetaan ruudun ulkopuolelle oikealle */
+        top: 0;
+        flex-direction: column;
+        background-color: #003366;
+        width: 70%; /* Valikon leveys mobiilissa */
+        height: 100vh;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+        padding-top: 80px; /* Tilaa logolle/ikonille ylhäällä */
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .nav-links.active {
+        right: 0; /* Tuodaan valikko näkyviin */
+    }
+
+    /* Hampurilaisikonin animaatio "X"-muotoon, kun valikko on auki */
+    .menu-toggle.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.is-active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .menu-toggle.is-active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+}
+
+/* =========================================
+   Responsiivisuus ja Fallbackit
+   ========================================= */
+
+/* Pienet näytöt (Tabletit ja Puhelimet) */
+@media (max-width: 1024px) {
+    #hero {
+        /* Mobiililaitteet eivät usein tue fixed-taustaa oikein.
+           Kytketään efekti pois ja käytetään normaalia scrollausta. */
+        background-attachment: scroll;
+        height: 50vh; /* Hieman matalampi mobiilissa */
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+}
+
+/* Erityisesti puhelimet (Navigaation piilotus) */
 @media (max-width: 768px) {
     .nav-links {
-        display: none; /* Voit lisätä "hampurilaisvalikon" myöhemmin */
+        display: none; /* Alkuperäinen sääntösi */
     }
 }
