@@ -64,7 +64,7 @@
             </div>
         </section>
 
-        <section id="tietoa-meista" class="container content-section">
+        <section id="tietoa" class="container content-section">
             <div class="section-text">
                 <h2>Mikä erottaa minut muista?</h2>
                 <p>Olen toiminut purjehduksenopettajana vuodesta 2006 alkaen. Olen auktorisoitu avomeriopettaja, tutkintotarkastaja sekä Suomen Navigoinninopettajat ry:n perustajajäsen.</p>
@@ -120,7 +120,7 @@
             </div>
         </section>
 
-        <section id="kurssit">
+        <!-- <section id="kurssit">
             <h2>Suosituimmat kurssit</h2>
             <div class="course-list">
                 <div class="course-item">
@@ -136,34 +136,66 @@
                     <p>Vahvista taitojasi ja opi toimimaan kipparina suotuisissa oloissa.</p>
                 </div>
             </div>
-        </section>
+        </section> -->
 
-        <section id="yhteystiedot">
-            <h2>Ota yhteyttä</h2>
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <p><strong>Jarmo Aaltonen</strong></p>
-                    <p>Kontiontie 55, 11120 Riihimäki</p>
-                    <p>Puh: +358 44 380 8569</p>
-                    <p>Email: jacke.seilaa@gmail.com</p>
+        <section id="yhteystiedot" class="contact-section">
+            <div class="container">
+                <div class="contact-grid">
+                    
+                    <div class="contact-info">
+                        <h2>Ota yhteyttä!</h2>
+                        <p class="contact-intro">Onko sinulla kysyttävää kursseista tai haluatko räätälöidyn purjehduselämyksen? Laita viestiä!</p>
+                        
+                        <div class="info-details">
+                            <p><strong>Jarmo Aaltonen</strong></p>
+                            <p>📍 Kontiontie 55, 11120 Riihimäki</p>
+                            <p>📞 +358 44 380 8569</p>
+                            <p>✉️ <a href="mailto:jacke.seilaa@gmail.com">jacke.seilaa@gmail.com</a></p>
+                        </div>
+
+                        <div class="contact-image-wrapper">
+                            <img src="img/jarmo_aaltonen.jpg" alt="Jarmo Aaltonen - Purjehdusopettaja" class="profile-img">
+                        </div>
+                    </div>
+
+                    <div class="contact-form-container">
+                        <form class="styled-form">
+                            <div class="form-group">
+                                <label>Koko nimi</label>
+                                <input type="text" name="name" placeholder="Esim. Matti Meikäläinen" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Sähköposti</label>
+                                <input type="email" name="email" placeholder="matti@esimerkki.fi" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Aihe</label>
+                                <select name="subject">
+                                    <option value="navi">Navigointikurssi</option>
+                                    <option value="purjehdus">Purjehduskurssi</option>
+                                    <option value="charter">Charter / Venevälitys</option>
+                                    <option value="muu">Muu yhteydenotto</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Viesti</label>
+                                <textarea name="message" rows="5" placeholder="Kirjoita viestisi tästä..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-submit">Lähetä viesti</button>
+                        </form>
+                    </div>
+
                 </div>
-                <form class="contact-form">
-                    <input type="text" placeholder="Nimesi" required>
-                    <input type="email" placeholder="Sähköpostisi" required>
-                    <select>
-                        <option>Navi-kurssi</option>
-                        <option>Purjehduskurssi</option>
-                        <option>Muu yhteydenotto</option>
-                    </select>
-                    <textarea placeholder="Viestisi"></textarea>
-                    <button type="submit" class="btn">Lähetä</button>
-                </form>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 JSailing / JAaltonen.fi</p>
+        <p>&copy; 2026 JSailing / JAaltonen.dev</p>
     </footer>
 
     <script src="script.js"></script>

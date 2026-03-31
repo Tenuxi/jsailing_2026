@@ -269,31 +269,126 @@ nav {
     }
 }
 
-/* Yhteystiedot */
-#yhteystiedot {
-    background: #fff;
-    padding: 40px 20px;
-    margin: 40px 0;
+/* --- Yhteystiedot Section --- */
+.contact-section {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* Vasen puoli hieman kapeampi */
+    gap: 60px;
+    align-items: start;
+}
+
+/* Vasen puoli */
+.contact-info h2 {
+    color: #003366;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.contact-intro {
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.info-details p {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.info-details a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.contact-image-wrapper {
+    margin-top: 30px;
+}
+
+.profile-img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: 5px solid #f4f4f4;
+}
+
+/* Lomake (Oikea puoli) */
+.contact-form-container {
+    background: #fdfdfd;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+}
+
+.styled-form .form-group {
+    margin-bottom: 20px;
+}
+
+.styled-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.styled-form input, 
+.styled-form select, 
+.styled-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
     border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s;
 }
 
-.contact-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
+.styled-form input:focus, 
+.styled-form textarea:focus {
+    outline: none;
+    border-color: #003366;
 }
 
-.contact-form {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.btn-submit {
+    background-color: #003366;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s;
 }
 
-.contact-form input, .contact-form select, .contact-form textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.btn-submit:hover {
+    background-color: #00509e;
+}
+
+/* Mobiiliasettelu */
+@media (max-width: 900px) {
+    .contact-grid {
+        grid-template-columns: 1fr; /* Muutetaan yhdeksi sarakkeeksi */
+        gap: 40px;
+    }
+
+    .contact-info {
+        text-align: center;
+    }
+
+    .profile-img {
+        margin: 0 auto;
+    }
+
+    .contact-form-container {
+        padding: 30px 20px;
+    }
 }
 
 /* Footer */
